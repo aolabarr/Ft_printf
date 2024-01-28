@@ -1,3 +1,3 @@
 REPLICA OF THE PRINTF FUNCTION IN C
 
-The function ft_printf print characters, strings, memory address, hexadecimal numbers and the % symbol.
+The function ft_printf print characters (c), strings (s), memory address(p), numbers (d,i) hexadecimal numbers (x,X) and the % symbol.
