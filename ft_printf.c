@@ -6,7 +6,7 @@
 /*   By: aolabarr <aolabarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 18:32:09 by aolabarr          #+#    #+#             */
-/*   Updated: 2024/01/27 14:22:45 by aolabarr         ###   ########.fr       */
+/*   Updated: 2024/07/18 09:23:44 by aolabarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,9 +51,9 @@ static int	printer_manager(va_list vargs, char type)
 	else if (type == 'p')
 		count += manage_dir(va_arg(vargs, size_t));
 	else if (type == 'd' || type == 'i')
-		count += ft_putnbr(va_arg(vargs, int));
+		count += ftpf_putnbr(va_arg(vargs, int));
 	else if (type == 'u')
-		count += ft_putnbru(va_arg(vargs, unsigned int));
+		count += ftpf_putnbru(va_arg(vargs, unsigned int));
 	else if (type == 'x' || type == 'X')
 		count += manage_hex(va_arg(vargs, unsigned int), type);
 	else if (type == '%')

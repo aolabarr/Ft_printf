@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   funcs_manager.c                                    :+:      :+:    :+:   */
+/*   pf_manager.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aolabarr <aolabarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 13:50:14 by aolabarr          #+#    #+#             */
-/*   Updated: 2024/01/27 16:37:54 by aolabarr         ###   ########.fr       */
+/*   Updated: 2024/07/18 09:25:30 by aolabarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int	manage_str(char *str)
 		return (6);
 	}
 	else
-		write(1, str, ft_strlen(str));
-	return (ft_strlen(str));
+		write(1, str, ftpf_strlen(str));
+	return (ftpf_strlen(str));
 }
 
 int	manage_hex(unsigned int num, char c)
@@ -37,11 +37,11 @@ int	manage_hex(unsigned int num, char c)
 	int		len;
 
 	dst = NULL;
-	str = ft_itoahex(num);
+	str = ftpf_itoahex(num);
 	if (!str)
 		return (0);
 	if (c == 'X')
-		dst = ft_strupcase(str);
+		dst = ftpf_strupcase(str);
 	else if (c == 'x')
 		dst = str;
 	len = manage_str(dst);
@@ -55,7 +55,7 @@ int	manage_dir(size_t num)
 	int		len;
 
 	len = 0;
-	str = ft_itoahex(num);
+	str = ftpf_itoahex(num);
 	if (!str)
 		return (0);
 	len += manage_str("0x");

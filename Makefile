@@ -6,7 +6,7 @@
 #    By: aolabarr <aolabarr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/21 13:37:39 by aolabarr          #+#    #+#              #
-#    Updated: 2024/01/27 13:53:53 by aolabarr         ###   ########.fr        #
+#    Updated: 2024/07/18 09:42:45 by aolabarr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,22 +18,29 @@ CFLAGS = -Wall -Werror -Wextra
 AR = ar
 ARFLAGS = -rc
 
-SRC =	ft_printf.c \
-		funcs_manager.c funcs_aux_1.c funcs_aux_2.c \
-		ft_itoa.c ft_itoahex.c
+OBJ_DIR = ./obj
 
-OBJ = $(SRC:.c=.o)
+SRC =	ft_printf.c \
+		pf_manager.c  \
+		pf_utils_1.c  \
+		pf_utils_2.c \
+		ftpf_itoa.c \
+
+OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:.c=.o))
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ_DIR) $(OBJ)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJ)
 
-%.o : %.c
+$(OBJ_DIR)/%.o : %.c
 	$(CC) -c $(CFLAGS) $< -o $@
 
+$(OBJ_DIR):
+	mkdir obj
+
 clean:
-	rm -f *.o
+	@if [ -d $(OBJ_DIR) ]; then rm -rf $(OBJ_DIR); fi
 
 fclean: clean
 	rm -f $(NAME) *.out

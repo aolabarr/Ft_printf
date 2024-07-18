@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ftpf_itoa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aolabarr <aolabarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 17:25:23 by aolabarr          #+#    #+#             */
-/*   Updated: 2024/01/27 13:54:04 by aolabarr         ###   ########.fr       */
+/*   Updated: 2024/07/18 09:27:11 by aolabarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static char	*create_str_pos(long int num);
 static char	*create_str_neg(long int num);
 static int	ft_numlen(long int num);
 
-char	*ft_itoa(int n)
+char	*ftpf_itoa(int n)
 {
 	long int	num;
 	int			sign;
@@ -25,7 +25,7 @@ char	*ft_itoa(int n)
 	sign = 0;
 	num = 0;
 	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
+		return (ftpf_strdup("-2147483648"));
 	if (n < 0)
 	{
 		sign = 1;

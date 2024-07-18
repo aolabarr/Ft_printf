@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoahex.c                                       :+:      :+:    :+:   */
+/*   pf_utils_1.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aolabarr <aolabarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 17:25:23 by aolabarr          #+#    #+#             */
-/*   Updated: 2024/01/27 13:53:54 by aolabarr         ###   ########.fr       */
+/*   Created: 2024/01/27 13:51:39 by aolabarr          #+#    #+#             */
+/*   Updated: 2024/07/18 09:39:51 by aolabarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,46 @@
 
 static int	ft_numlen(size_t num);
 
-char	*ft_itoahex(size_t num)
+int	ftpf_putnbr(int n)
+{
+	char	c;
+	int		count;
+
+	if (n == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return (11);
+	}
+	count = 0;
+	if (n < 0)
+	{
+		write(1, "-", 1);
+		n = -n;
+		count++;
+	}
+	if (n > 9)
+		count += ftpf_putnbr(n / 10);
+	c = n % 10 + '0';
+	manage_char(c);
+	count++;
+	return (count);
+}
+
+int	ftpf_putnbru(unsigned int u)
+{
+	char	c;
+	int		count;
+
+	count = 0;
+	if (u > 9)
+		count += ftpf_putnbru(u / 10);
+	c = u % 10 + '0';
+	manage_char(c);
+	count++;
+	return (count);
+}
+
+char	*ftpf_itoahex(size_t num)
 {
 	char		*str;
 	long int	len;

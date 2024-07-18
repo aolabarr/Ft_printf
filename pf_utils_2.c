@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   funcs_aux_2.c                                      :+:      :+:    :+:   */
+/*   pf_utils_2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aolabarr <aolabarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 13:52:09 by aolabarr          #+#    #+#             */
-/*   Updated: 2024/01/27 14:22:33 by aolabarr         ###   ########.fr       */
+/*   Updated: 2024/07/18 09:25:30 by aolabarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_strdup(const char *s)
+char	*ftpf_strdup(const char *s)
 {
 	char	*str;
 	size_t	len;
 
-	len = ft_strlen(s) + 1;
+	len = ftpf_strlen(s) + 1;
 	str = malloc(len * sizeof(char));
 	if (!str)
 		return (NULL);
-	ft_strlcpy(str, s, len);
+	ftpf_strlcpy(str, s, len);
 	return (str);
 }
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ftpf_strlcpy(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	int		bool;
@@ -48,7 +48,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (i);
 }
 
-size_t	ft_strlen(const char *str)
+size_t	ftpf_strlen(const char *str)
 {
 	size_t	count;
 
@@ -61,7 +61,7 @@ size_t	ft_strlen(const char *str)
 	return (count);
 }
 
-char	*ft_strupcase(char *str)
+char	*ftpf_strupcase(char *str)
 {
 	int	i;
 

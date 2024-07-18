@@ -6,7 +6,7 @@
 /*   By: aolabarr <aolabarr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 16:19:11 by aolabarr          #+#    #+#             */
-/*   Updated: 2024/01/27 13:53:36 by aolabarr         ###   ########.fr       */
+/*   Updated: 2024/07/18 09:25:30 by aolabarr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-size_t	ft_strlen(const char *str);
-char	*ft_strdup(const char *s);
-char	*ft_itoa(int n);
-int		ft_putnbr(int n);
-int		ft_putnbru(unsigned int u);
-size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+size_t	ftpf_strlen(const char *str);
+char	*ftpf_strdup(const char *s);
+char	*ftpf_itoa(int n);
+int		ftpf_putnbr(int n);
+int		ftpf_putnbru(unsigned int u);
+size_t	ftpf_strlcpy(char *dst, const char *src, size_t size);
 
 int		ft_printf(const char *str, ...);
-char	*ft_itoahex(size_t n);
-char	*ft_strupcase(char *str);
+char	*ftpf_itoahex(size_t n);
+char	*ftpf_strupcase(char *str);
 
 int		manage_char(int c);
 int		manage_str(char *str);
